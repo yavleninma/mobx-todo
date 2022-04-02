@@ -1,4 +1,5 @@
 import { makeAutoObservable } from "mobx";
+import makeInspectable from "mobx-devtools-mst";
 
 type todoType = {
   id: number;
@@ -44,4 +45,6 @@ class Todo {
   }
 }
 
-export default new Todo();
+const TodoInstance = new Todo();
+makeInspectable(TodoInstance);
+export default TodoInstance;
